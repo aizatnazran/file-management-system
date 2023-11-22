@@ -1,7 +1,6 @@
-// server.js
 const express = require("express");
 const bodyParser = require("body-parser");
-const cors = require("cors"); // Import the cors middleware
+const cors = require("cors");
 const fileRoutes = require("./routes/fileRoutes");
 
 const app = express();

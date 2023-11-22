@@ -1,4 +1,4 @@
-<!-- src/App.vue -->
+<!-- Root component -->
 <template>
   <div id="app">
     <router-view></router-view>

@@ -1,9 +1,11 @@
 <template>
   <div class="add-file-container">
+    <!-- Navigation Links -->
     <div class="router-container">
       <router-link class="file-list-link" to="/list">File List</router-link>
       <router-link to="/update">Update Files</router-link>
     </div>
+    <!-- Input fields -->
     <div class="add-file-form">
       <h2 class="header-text">Add File</h2>
       <form @submit.prevent="addFile">
@@ -31,6 +33,8 @@ export default {
       size: "",
     };
   },
+
+  //Call addFile method when form is submitted
   methods: {
     async addFile() {
       try {

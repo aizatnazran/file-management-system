@@ -1,11 +1,13 @@
-<!-- FileList.vue -->
 <template>
+  <!-- Navigation Links -->
   <div class="router-container">
     <router-link class="add-file" to="/add">Add Files</router-link>
     <router-link to="/update">Update Files</router-link>
   </div>
   <div>
     <h2 class="header">File List</h2>
+
+    <!-- Table containing file informations -->
     <table>
       <thead>
         <tr>
@@ -17,11 +19,14 @@
         </tr>
       </thead>
       <tbody>
+        <!-- v-for directive to iterate over files array -->
         <tr v-for="file in files" :key="file.id">
           <td>{{ file.id }}</td>
           <td>{{ file.filename }}</td>
           <td>{{ file.path }}</td>
           <td>{{ file.size }}</td>
+
+          <!-- Delete button -->
           <td>
             <button @click="confirmDelete(file.id)">Delete</button>
           </td>
@@ -38,9 +43,13 @@ export default {
       files: [],
     };
   },
+
+  //Calls getAllFiles method when component is mounted
   mounted() {
     this.getAllFiles();
   },
+
+  //Makes a GET request to retrieve list of files
   methods: {
     async getAllFiles() {
       try {
@@ -51,6 +60,8 @@ export default {
         console.error("Error fetching files:", error);
       }
     },
+
+    //Makes a DELETE request to delete file by ID
     async deleteFile(id) {
       try {
         await this.$axios.delete(`/files/delete/${id}`);
@@ -61,6 +72,8 @@ export default {
         console.error("Error deleting file:", error);
       }
     },
+
+    //Alert message to confirm file deletion
     confirmDelete(id) {
       const confirmMessage = `Are you sure you want to delete file with ID ${id}?`;
 

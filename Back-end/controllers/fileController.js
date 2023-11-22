@@ -1,4 +1,4 @@
-//Controller acts as an intermediary between the routes (HTTP requests) and the model (database)
+//Intermediary between the routes (HTTP requests) and the model (database)
 
 // Import MySQL connection
 const connection = require("../models");
