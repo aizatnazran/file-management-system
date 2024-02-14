@@ -2,6 +2,8 @@
 
 A simple file management system with CRUD (Create, Read, Update and Delete) functionalities for testing purposes.
 
+![File](file.png)
+
 ### Prerequisites
 
 Before you can run the application, make sure you have Node.js installed on your system. You can download it from [Node.js official website](https://nodejs.org/). After installing Node.js, you will have access to the `npm` and `npx` commands.
